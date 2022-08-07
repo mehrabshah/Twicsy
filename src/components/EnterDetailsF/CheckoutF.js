@@ -41,7 +41,7 @@ export default function CheckoutF(props) {
    <div className="header ">
   <div className="contain">
     <Link to="/Enterdetailsf" className="back">
-      <span className="hidden-xs" style={{color:"white"}}>Back</span>
+      <span className="hidden-xs" >Back</span>
     </Link>
     <a href="/" className="logo">
     <img className='img' src="../logo/VI.png" alt="" />
@@ -92,7 +92,7 @@ export default function CheckoutF(props) {
               <div className="info">
                 <div className="name">@{props.usernamef}</div>
                 <div className="change">
-                  <a href="/order/enter-details" style={{color:"white"}}>Change username</a>
+                  <a href="/order/enter-details" >Change username</a>
                 </div>
               </div>
             </div>
