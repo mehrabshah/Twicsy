@@ -1,6 +1,10 @@
 import React from 'react'
+import { useContext } from 'react';
 import {motion} from "framer-motion";
+import counterContext from '../Hero_likes';
 export default function Move1() {
+  const dispatch = useContext(counterContext);
+
   return (
     <motion.div className="slider__container embla__container is-draggable"
     drag="x"
@@ -13,6 +17,7 @@ export default function Move1() {
     <div
       className="slider__slides embla__slides"
       style={{ transform: "translate3d(0%, 0px, 0px)" }}
+      onClick={() => dispatch({ type: 'Move1' })}
     >
       <div
         className="slider__slide embla__slide is-current-slide"
@@ -41,6 +46,7 @@ export default function Move1() {
       <div
         className="slider__slide embla__slide is-next-slide"
         style={{ left: "0%" }}
+        onClick={() => dispatch({ type: 'Move2' })}
       >
         <div className="plan">
           <div className="plan__inner">
@@ -62,7 +68,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide" style={{ left: "0%" }}>
+      <div className="slider__slide embla__slide" style={{ left: "0%" }}
+       onClick={() => dispatch({ type: 'Move3' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -83,7 +90,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide" style={{ left: "0%" }}>
+      <div className="slider__slide embla__slide" style={{ left: "0%" }}
+       onClick={() => dispatch({ type: 'Move4' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -104,7 +112,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide" style={{ left: "0%" }}>
+      <div className="slider__slide embla__slide" style={{ left: "0%" }}
+       onClick={() => dispatch({ type: 'Move5' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -125,7 +134,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide">
+      <div className="slider__slide embla__slide"
+       onClick={() => dispatch({ type: 'Move6' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -146,7 +156,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide">
+      <div className="slider__slide embla__slide"
+       onClick={() => dispatch({ type: 'Move7' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -167,7 +178,8 @@ export default function Move1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide">
+      <div className="slider__slide embla__slide"
+       onClick={() => dispatch({ type: 'Move8' })}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">

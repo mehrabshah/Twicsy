@@ -11,20 +11,15 @@ import Instagram_views from "./components/Instagramviews/Instagram_views";
 import Instagrams_likes from "./components/Instagramlikes/Instagrams_likes";
 import Contact from "./components/Contactus/Contact";
 import Enter from "./components/EnterDetails/Enter";
-
 import Checkout from "./components/EnterDetails/Check_out";
-
 import PaymentForm from "./components/Stripe/PaymentForm";
-
 import CheckoutF from "./components/EnterDetailsF/CheckoutF";
 import EnterF from "./components/EnterDetailsF/EnterF";
 import StripeContainer from "./components/Stripe/StripeContainer";
 import EnterV from "./components/EnterdetailsV/EnterV";
 import CheckoutV from "./components/EnterdetailsV/CheckoutV";
-
-
-
-
+import { useReducer } from "react"; 
+import { createContext } from "react";
 function App() {
   // For likes
   const [drop, setDrop] = useState(false);
@@ -207,6 +202,36 @@ function App() {
     setViews(50000);
     setDropv((dropv) => !dropv)
   }
+//   const initialState = {
+//     Prize:2.97,
+//     DiscountPrize:3.63,
+//  };
+//  function reducer(state, action) {
+//    switch (action.type) {
+//      case 'Move1':
+//        return {Prize:2.97,DiscountPrize:3.63};
+//      case 'Move2':
+//        return {Prize:5.49,DiscountPrize:9.07};   
+//      case 'Move3':
+//        return {Prize:7.99,DiscountPrize:18.15};
+//      case 'Move4':
+//        return {Prize:13.09,DiscountPrize:36.30};
+//      case 'Move5':
+//        return {Prize:28.99,DiscountPrize:90.75};
+//      case 'Move6':
+//        return {Prize:49.99,DiscountPrize:181.50};
+//      default:
+//        throw new Error();
+//    }
+//  }
+//  const [state, dispatch] = useReducer(reducer, initialState);
+ 
+
+
+//  const counterContext = createContext();    
+
+
+
   
 
   
@@ -214,9 +239,10 @@ function App() {
     <>
     {/* <StripeContainer/> */}
     {/* <StripeContainer/> */}
+
    
     <Router>
-
+    
       <div className=" cs">
         <Navbar  />
       </div>
@@ -259,13 +285,9 @@ function App() {
           <Route exact path="/Enterdetailsv/checkoutv" element={<CheckoutV views={views} prizev={prizev} usernamev={usernamev}  /> }></Route>
           
 
-      </Routes>
-
-
-      
+      </Routes>      
       <Footer />
       </Router> 
-     
     </>
   );
 }

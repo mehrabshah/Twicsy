@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Choose() {
   return (
-    <div>
+    <div id="choose">
             <div
   className="animate in-view is-animated"
   data-delay="0"

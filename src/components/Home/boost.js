@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll'
 
 export default function Boost() {
   return (
@@ -61,7 +62,7 @@ export default function Boost() {
                                                             src="/images/100-emoji.png"
                                                             decoding="async" data-nimg="intrinsic"
                                                            className='s6'
-                                                            loading="lazy" /></noscript></span></figure>Best IG Followers
+                                                            loading="lazy" /></noscript></span></figure><span style={{marginLeft:20}}>Best IG Followers</span>
                                         </div>
                                     </li>
                                     <li className="s7">
@@ -80,8 +81,8 @@ export default function Boost() {
                                                             src="./images/cowboy-emoji.png"
                                                             decoding="async" data-nimg="intrinsic"
                                                             className='s6'
-                                                            loading="lazy" /></noscript></span></figure>Go viral
-                                            with IG Views
+                                                            loading="lazy" /></noscript></span></figure> <span style={{margin:20}}>Go viral
+                                            with IG Views</span>
                                         </div>
                                     </li>
                                     <li className='s10'>
@@ -100,8 +101,8 @@ export default function Boost() {
                                                             src="./images/100-emoji.png"
                                                             decoding="async" data-nimg="intrinsic"
                                                             className='s6'
-                                                            loading="lazy" /></noscript></span></figure>IG Likes in
-                                            Seconds
+                                                            loading="lazy" /></noscript></span></figure><span style={{margin:20}}>IG Likes in
+                                            Seconds</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -182,9 +183,9 @@ export default function Boost() {
                     </div>
                     <div className="hero__actions">
                         <div className="flex-row lg-align-center xs-cols-1 xs-justify-center">
-                            <div className="flex-col"><button className="btn btn--large"
+                            <div className="flex-col"><Link to="choose" smooth duration={500} className="btn btn--large"
                                     type="button"><span></span><span></span><span></span><strong>Get
-                                        Started</strong></button>
+                                        Started</strong></Link>
                                 <p><small>Starting at <strong>$1.47</strong></small></p>
                             </div>
                             <div className="flex-col">

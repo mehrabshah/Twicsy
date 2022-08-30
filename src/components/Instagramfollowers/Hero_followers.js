@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import FollowersInfo from './FollowersInfo';
 import Flist1 from './FollowersList.js/Flist1';
 import Flist2 from './FollowersList.js/Flist2';
+import { faSortAmountDown } from '@fortawesome/free-solid-svg-icons';
 export default function Hero_followers() {
+  
   const [question,setQuestion]=useState(false);
   const [like,setLike]=useState(true);
   const btnQuestion=()=>{
@@ -548,20 +550,23 @@ export default function Hero_followers() {
               </div>
             </div>
             {/* The list is added here */}
-            {like?<Flist2/>:<Flist1/>}
+
+              
+            
+            {like?  <Flist2/>:<Flist1/>}
             <div className="plans__actions">
               <div className="flex-row lg-cols-3 lg-align-center md-cols-3 md-align-center sm-cols-3 sm-align-center xs-cols-2 xs-justify-center">
                 <div className="flex-col">
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>$</sup>2.97
+                        <sup>$</sup>
                       </strong>
-                      <strike>$3.63</strike>
+                      <strike>$</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span>$0.66</span>
+                      You Saved <span></span>
                     </div>
                   </div>
                 </div>
@@ -799,6 +804,9 @@ export default function Hero_followers() {
   </div>
 </div>
 {question && <FollowersInfo />}
+
+ 
+
     </div>
   )
 }

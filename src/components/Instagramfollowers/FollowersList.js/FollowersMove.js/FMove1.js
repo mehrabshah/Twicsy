@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion} from "framer-motion";
 export default function FMove1() {
+
   return (
     <motion.div className="slider__container embla__container is-draggable"
     drag="x"
@@ -10,6 +11,7 @@ export default function FMove1() {
 
 
     }}>
+
     <div
       className="slider__slides embla__slides"
       style={{ transform: "translate3d(0%, 0px, 0px)" }}
@@ -17,6 +19,7 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-current-slide is-selected"
         style={{ left: "0%" }}
+     
       >
         <div className="plan is-active">
           <div className="plan__inner">
@@ -43,6 +46,7 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-next-slide is-selected"
         style={{ left: "0%" }}
+        
       >
         <div className="plan">
           <div className="plan__inner">
@@ -69,7 +73,7 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
-      >
+             >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -95,6 +99,7 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
+       
       >
         <div className="plan">
           <div className="plan__inner">
@@ -121,6 +126,7 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
+       
       >
         <div className="plan">
           <div className="plan__inner">
@@ -144,7 +150,8 @@ export default function FMove1() {
           </div>
         </div>
       </div>
-      <div className="slider__slide embla__slide">
+      <div className="slider__slide embla__slide"
+     >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">

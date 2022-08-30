@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LikeList2 from './LikeList2';
 import LikesInfo from './LikesInfo';
 import LikesList from './LikesList';
+import { useReducer } from 'react';
+import { createContext } from 'react';
 export default function Hero_Likes() {
   const [question,setQuestion]=useState(false);
   const [like,setLike]=useState(true);
@@ -13,7 +15,6 @@ export default function Hero_Likes() {
   const btnLike=()=>{
     setLike(like=>!like)
   }
-  
   return (
     <div>
           <div
@@ -552,7 +553,7 @@ export default function Hero_Likes() {
               </div>
             </div>
             {/* <div className="embla embla--alt slider-plans"> */}
-             {like?<LikeList2/>:<LikesList/>}
+             {like? <LikeList2/>:<LikesList/>}
            
             {/* </div> */}
             <div className="plans__actions">
@@ -561,13 +562,13 @@ export default function Hero_Likes() {
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>$</sup>1.47
+                        <sup>$</sup>
                       </strong>
-                      <strike>$1.99</strike>
+                      <strike>$</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span>$0.52</span>
+                      You Saved <span>$</span>
                     </div>
                   </div>
                 </div>
