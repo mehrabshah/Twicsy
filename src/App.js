@@ -193,10 +193,6 @@ function App() {
     setNumber2(15);
     setPrizev(49.99);
     setViews(25000);
-    setDropv((dropv) => !dropv)
-  }
-  function func6v(e) {
-    e.preventDefault();
     setNumber2(16);
     setPrizev(74.99);
     setViews(50000);
@@ -278,7 +274,7 @@ function App() {
 
           <Route exact path="/Enterdetailsv" element={<EnterV dropClickv={dropClickv} dropv={dropv}
            func1v={func1v} func2v={func2v}
-           func3v={func3v} func4v={func4v} func5v={func5v} func6v={func6v} 
+           func3v={func3v} func4v={func4v} func5v={func5v} 
           followers={followers} 
           prizev={prizev} number3={number3} views={views} Userbtnv={Userbtnv} /> }>
           </Route>

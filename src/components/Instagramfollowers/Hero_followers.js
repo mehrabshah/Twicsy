@@ -4,10 +4,14 @@ import FollowersInfo from './FollowersInfo';
 import Flist1 from './FollowersList.js/Flist1';
 import Flist2 from './FollowersList.js/Flist2';
 import { faSortAmountDown } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 export default function Hero_followers() {
   
   const [question,setQuestion]=useState(false);
   const [like,setLike]=useState(true);
+
+  const followers = useSelector(redux => redux.followers);
+
   const btnQuestion=()=>{
     setQuestion(question=>!question)
   }
@@ -560,13 +564,13 @@ export default function Hero_followers() {
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>$</sup>
+                        <sup>${followers? followers.discount:2.97}</sup>
                       </strong>
-                      <strike>$</strike>
+                      <strike>${followers? followers.actualPrice : 6.63}</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span></span>
+                      You Saved <span>{((followers? followers.actualPrice : 6.63)-(followers? followers.discount:2.97)).toFixed(2)} </span>
                     </div>
                   </div>
                 </div>

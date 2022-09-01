@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LikeList2 from './LikeList2';
 import LikesInfo from './LikesInfo';
 import LikesList from './LikesList';
-import { useReducer } from 'react';
+import { useSelector } from 'react-redux';
 import { createContext } from 'react';
+
+
 export default function Hero_Likes() {
+  const likes = useSelector(redux => redux.followers);
   const [question,setQuestion]=useState(false);
   const [like,setLike]=useState(true);
+
   // const [like2,setLike2]=useState(false);
   const btnQuestion=()=>{
     setQuestion(question=>!question)
@@ -562,13 +566,13 @@ export default function Hero_Likes() {
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>$</sup>
+                        <sup>${likes?likes.discount:1.99}</sup>
                       </strong>
-                      <strike>$</strike>
+                      <strike>${likes?likes.actualPrice:1.47}</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span>$</span>
+                      You Saved <span>{((likes? likes.actualPrice : 6.63)-(likes? likes.discount:2.97)).toFixed(2)}</span>
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,14 @@
 import React from 'react'
 import {motion} from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { followersAction_Move1 } from '../../../../redux/actions';
+import { followersAction_Move2 } from '../../../../redux/actions';
+import { followersAction_Move3 } from '../../../../redux/actions';
+import { followersAction_Move4 } from '../../../../redux/actions';
+import { followersAction_Move5 } from '../../../../redux/actions';
+import { followersAction_Move6 } from '../../../../redux/actions';
 export default function FMove1() {
-
+  const dispatch = useDispatch();
   return (
     <motion.div className="slider__container embla__container is-draggable"
     drag="x"
@@ -18,6 +25,13 @@ export default function FMove1() {
     >
       <div
         className="slider__slide embla__slide is-current-slide is-selected"
+        onClick={e => {
+          dispatch(followersAction_Move1({
+            id: 1,
+            actualPrice: 3.63,
+            discount:2.97
+          }))
+        }}
         style={{ left: "0%" }}
      
       >
@@ -46,6 +60,13 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-next-slide is-selected"
         style={{ left: "0%" }}
+        onClick={e => {
+          dispatch(followersAction_Move2({
+            id: 2,
+            actualPrice: 9.07,
+            discount:5.49
+          }))
+        }}
         
       >
         <div className="plan">
@@ -73,6 +94,16 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
+        onClick={e => {
+          dispatch(followersAction_Move3({
+            id: 3,
+            actualPrice: 18.15,
+            discount:7.99
+          }))
+        }}
+
+
+
              >
         <div className="plan">
           <div className="plan__inner">
@@ -99,6 +130,13 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
+        onClick={e => {
+          dispatch(followersAction_Move4({
+            id: 4,
+            actualPrice: 36.30,
+            discount:13.09
+          }))
+        }}
        
       >
         <div className="plan">
@@ -126,6 +164,13 @@ export default function FMove1() {
       <div
         className="slider__slide embla__slide is-selected"
         style={{ left: "0%" }}
+        onClick={e => {
+          dispatch(followersAction_Move5({
+            id: 5,
+            actualPrice: 90.75,
+            discount:28.99
+          }))
+        }}
        
       >
         <div className="plan">
@@ -151,6 +196,13 @@ export default function FMove1() {
         </div>
       </div>
       <div className="slider__slide embla__slide"
+       onClick={e => {
+        dispatch(followersAction_Move6({
+          id: 6,
+          actualPrice: 181.50,
+          discount:49.99
+        }))
+      }}
      >
         <div className="plan">
           <div className="plan__inner">

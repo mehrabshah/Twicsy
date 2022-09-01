@@ -2,8 +2,19 @@ import React from 'react'
 import { useContext } from 'react';
 import {motion} from "framer-motion";
 import counterContext from '../Hero_likes';
+import { useDispatch } from 'react-redux';
+import { likesAction_Move1 } from '../../../redux/actions';
+import { likesAction_Move2 } from '../../../redux/actions';
+import { likesAction_Move3 } from '../../../redux/actions';
+import { likesAction_Move4 } from '../../../redux/actions';
+import { likesAction_Move5 } from '../../../redux/actions';
+import { likesAction_Move6 } from '../../../redux/actions';
+import { likesAction_Move7 } from '../../../redux/actions';
+import { likesAction_Move8 } from '../../../redux/actions';
+
 export default function Move1() {
-  const dispatch = useContext(counterContext);
+  const dispatch = useDispatch();
+  
 
   return (
     <motion.div className="slider__container embla__container is-draggable"
@@ -17,11 +28,18 @@ export default function Move1() {
     <div
       className="slider__slides embla__slides"
       style={{ transform: "translate3d(0%, 0px, 0px)" }}
-      onClick={() => dispatch({ type: 'Move1' })}
+
     >
       <div
         className="slider__slide embla__slide is-current-slide"
         style={{ left: "0%" }}
+        onClick={e => {
+          dispatch(likesAction_Move1({
+            id: 1,
+            actualPrice: 1.99,
+            discount:1.47
+          }))
+        }}
       >
         <div className="plan is-active">
           <div className="plan__inner">
@@ -46,7 +64,14 @@ export default function Move1() {
       <div
         className="slider__slide embla__slide is-next-slide"
         style={{ left: "0%" }}
-        onClick={() => dispatch({ type: 'Move2' })}
+        onClick={e => {
+          dispatch(likesAction_Move2({
+            id: 2,
+            actualPrice: 3.98,
+            discount:2.97
+          }))
+        }}
+    
       >
         <div className="plan">
           <div className="plan__inner">
@@ -69,7 +94,14 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide" style={{ left: "0%" }}
-       onClick={() => dispatch({ type: 'Move3' })}>
+      onClick={e => {
+        dispatch(likesAction_Move3({
+          id: 3,
+          actualPrice: 9.95,
+          discount:5.49
+        }))
+      }}
+       >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -91,7 +123,14 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide" style={{ left: "0%" }}
-       onClick={() => dispatch({ type: 'Move4' })}>
+      onClick={e => {
+        dispatch(likesAction_Move4({
+          id: 4,
+          actualPrice: 19.90,
+          discount:7.99
+        }))
+      }}
+       >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -113,7 +152,14 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide" style={{ left: "0%" }}
-       onClick={() => dispatch({ type: 'Move5' })}>
+      onClick={e => {
+        dispatch(likesAction_Move5({
+          id: 5,
+          actualPrice: 39.80,
+          discount:12.99
+        }))
+      }}
+       >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -135,7 +181,14 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide"
-       onClick={() => dispatch({ type: 'Move6' })}>
+      onClick={e => {
+        dispatch(likesAction_Move6({
+          id: 6,
+          actualPrice: 99.51,
+          discount:28.99
+        }))
+      }}
+      >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -157,7 +210,13 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide"
-       onClick={() => dispatch({ type: 'Move7' })}>
+       onClick={e => {
+        dispatch(likesAction_Move7({
+          id: 7,
+          actualPrice: 199.02,
+          discount:49.99
+        }))
+      }}>
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
@@ -179,7 +238,14 @@ export default function Move1() {
         </div>
       </div>
       <div className="slider__slide embla__slide"
-       onClick={() => dispatch({ type: 'Move8' })}>
+      onClick={e => {
+        dispatch(likesAction_Move8({
+          id: 8,
+          actualPrice: 398.05,
+          discount:88.99
+        }))
+      }}
+       >
         <div className="plan">
           <div className="plan__inner">
             <div className="plan__bar">
