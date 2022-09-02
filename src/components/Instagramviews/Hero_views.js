@@ -1,8 +1,44 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {motion} from "framer-motion";
+import { useState  } from 'react';
 export default function Hero_views() {
+    const [actualPrice,seActualPrice]=useState(2.21);
+    const [price,setPrice]=useState(1.99);
+    const [border,setBorder]=useState(1);
+    const func_Move1=()=>{
+      seActualPrice(2.21);
+      setPrice(1.99);
+      setBorder(1);
+    }
+    const func_Move2=()=>{
+      seActualPrice(9.08);
+      setPrice(6.08);
+      setBorder(2);
+    }
+    const func_Move3=()=>{
+      seActualPrice(23.42);
+      setPrice(14.99);
+      setBorder(3);
+    }
+    const func_Move4=()=>{
+      seActualPrice(49.00);
+      setPrice(24.99);
+      setBorder(4);
+    }
+    const func_Move5=()=>{
+      seActualPrice(131.55);
+      setPrice(49.99);
+      setBorder(5);
+    }
+    const func_Move6=()=>{
+      seActualPrice(299.96);
+      setPrice(74.99);
+      setBorder(6);
+    }
+   
   return (
+   
     <div>
             <div
   className="animate in-view is-animated"
@@ -523,8 +559,9 @@ export default function Hero_views() {
                   className="slider__slides embla__slides"
                   style={{ transform: "translate3d(0%, 0px, 0px)" }}
                 >
-                  <div className="slider__slide embla__slide is-current-slide is-selected">
-                    <div className="plan is-active">
+                  <div className="slider__slide embla__slide is-current-slide is-selected"
+                   onClick={func_Move1}         >
+                    <div className={`plan   ${border===1?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "10%" }} />
@@ -544,8 +581,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
-                  <div className="slider__slide embla__slide is-next-slide is-selected">
-                    <div className="plan">
+                  <div className="slider__slide embla__slide is-next-slide is-selected"
+                  onClick={func_Move2}>
+                    <div className={`plan   ${border===2?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "23%" }} />
@@ -565,8 +603,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
-                  <div className="slider__slide embla__slide is-selected">
-                    <div className="plan">
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move3}>
+                    <div className={`plan   ${border===3?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "36%" }} />
@@ -586,8 +625,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
-                  <div className="slider__slide embla__slide is-selected">
-                    <div className="plan">
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move4}>
+                    <div className={`plan   ${border===4?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "49%" }} />
@@ -607,8 +647,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
-                  <div className="slider__slide embla__slide is-selected">
-                    <div className="plan">
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move5}>
+                    <div className={`plan   ${border===5?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "62%" }} />
@@ -628,8 +669,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
-                  <div className="slider__slide embla__slide">
-                    <div className="plan">
+                  <div className="slider__slide embla__slide"
+                  onClick={func_Move6}>
+                    <div className={`plan   ${border===6?"is-active":""}`}>
                       <div className="plan__inner">
                         <div className="plan__bar">
                           <span style={{ width: "75%" }} />
@@ -649,6 +691,9 @@ export default function Hero_views() {
                       </div>
                     </div>
                   </div>
+                  
+
+
                 </div>
               </motion.div>
               <div className="slider__cta embla__cta">
@@ -662,13 +707,13 @@ export default function Hero_views() {
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>$</sup>1.99
+                        <sup>$</sup>{price}
                       </strong>
-                      <strike>$2.21</strike>
+                      <strike>${actualPrice}</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span>$0.22</span>
+                      You Saved <span>${(actualPrice-price).toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
@@ -865,8 +910,7 @@ export default function Hero_views() {
                   <span>
                     <svg
                       className="svg-icon svg-icon--message"
-                      width={12}
-                      height={12}
+                                                                  height={12}
                       viewBox="0 0 12 12"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"

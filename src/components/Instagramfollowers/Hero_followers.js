@@ -1,26 +1,51 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import FollowersInfo from './FollowersInfo';
-import Flist1 from './FollowersList.js/Flist1';
-import Flist2 from './FollowersList.js/Flist2';
-import { faSortAmountDown } from '@fortawesome/free-solid-svg-icons';
-import { useSelector } from 'react-redux';
+import {motion} from "framer-motion";
+import { useState  } from 'react';
 export default function Hero_followers() {
-  
-  const [question,setQuestion]=useState(false);
-  const [like,setLike]=useState(true);
+    const [actualPrice,seActualPrice]=useState(3.63);
+    const [price,setPrice]=useState(2.97);
+    const [border,setBorder]=useState(1);
 
-  const followers = useSelector(redux => redux.followers);
+    const func_Move1=()=>{
+      seActualPrice(3.63);
+      setPrice(2.97);
+      setBorder(1);
+      
+    }
+    const func_Move2=()=>{
+      seActualPrice(9.07);
+      setPrice(5.49);
+      setBorder(2);
 
-  const btnQuestion=()=>{
-    setQuestion(question=>!question)
-  }
-  const btnLike=()=>{
-    setLike(like=>!like)
-  }
+
+    }
+    const func_Move3=()=>{
+      seActualPrice(18.15);
+      setPrice(7.99);
+      setBorder(3);
+
+    }
+    const func_Move4=()=>{
+      seActualPrice(36.30);
+      setPrice(13.09);
+      setBorder(4);
+    }
+    const func_Move5=()=>{
+      seActualPrice(90.75);
+      setPrice(28.99);
+      setBorder(5);
+    }
+    const func_Move6=()=>{
+      seActualPrice(181.50);
+      setPrice(49.99);
+      setBorder(6);
+    }
+   
   return (
+   
     <div>
-       <div
+            <div
   className="animate in-view is-animated"
   data-delay={0}
   data-duration={400}
@@ -90,14 +115,14 @@ export default function Hero_followers() {
                       >
                         <img
                           sizes="100vw"
-                          srcSet="./images/women.png, 
-                          ./images/women.png,
+                          srcSet="./images/women.png,
                            ./images/women.png, 
-                           ./images/women.png, 
-                           ./images/women.png, 
-                           ./images/women.png, 
-                           ./images/women.png, 
-                           ./images/women.png"
+                           ./images/women.png,
+                            ./images/women.png, 
+                            ./images/women.png,
+                            ./images/women.png,
+                             ./images/women.png,
+                              ./images/women.png"
                           src="./images/women.png"
                           decoding="async"
                           data-nimg="fill"
@@ -256,8 +281,8 @@ export default function Hero_followers() {
                             />
                           </span>
                           <img
-                            srcSet="./images/cowboy-emoji.png,
-                             ./images/cowboy-emoji.png"
+                            srcSet="./images/cowboy-emoji.png, 
+                            ./images/cowboy-emoji.png"
                             src="./images/cowboy-emoji.png"
                             decoding="async"
                             data-nimg="intrinsic"
@@ -280,7 +305,7 @@ export default function Hero_followers() {
                           <noscript />
                         </span>
                       </figure>
-                      Go viral with IG Views
+                      Go viral with IG Followers
                     </div>
                   </li>
                   <li style={{ transitionDelay: "0.8s" }}>
@@ -511,73 +536,196 @@ export default function Hero_followers() {
         <div className="hero__content">
           <div className="hero__text">
             <h1>
-              Buy Instagram Followers <br /> with
-              <span className="orange-highlight">{" "}Instant Delivery{" "}
-                <span role="img" aria-label="thunderbolt">
-                  ⚡
-                </span>
+              Buy Instagram Followers <br className="hidden-xs" /> with{" "}
+              <span className="orange-highlight">Instant Delivery</span>
+              <span role="img" aria-label="thunderbolt">
+                ⚡
               </span>
             </h1>
             <p>
-              At Twicsy, you can buy Instagram followers quickly, safely,
+              Twicsy allows you to safely boost the Followers on your
               <br className="hidden-xs" />
-              and easily with just a few clicks. See our deals below!
+              Instagram videos in only a few easy steps.
             </p>
           </div>
           <div className="plans">
-            <div className="plans__navigation">
-            <button onClick={btnLike}
-                type="button"
-                className={like?"plans__navigation-button is-active":"plans__navigation-button"}
-              >
-                High Quality
-              </button>
-              <button  onClick={btnLike} type="button" className={like?"plans__navigation-button": "plans__navigation-button is-active"}>
-                Premium followers
-              </button>
-              <div className={question?"tooltip is-visible":"tooltip"}>
-                <button onClick={btnQuestion} className="tooltip__btn" type="button">
-                  <svg
-                    className="svg-icon svg-icon--question"
-                    width={18}
-                    height={17}
-                    viewBox="0 0 18 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9.07422 0C13.7664 0.00530795 17.5689 3.80778 17.5742 8.5C17.5742 13.1944 13.7686 17 9.07422 17C4.3798 17 0.574219 13.1944 0.574219 8.5C0.574219 3.80558 4.3798 0 9.07422 0ZM9.11011 11.0821C8.96907 11.0821 8.83024 11.1064 8.69361 11.1548C8.55698 11.2033 8.43577 11.2716 8.33 11.3598C8.22422 11.4479 8.14048 11.5559 8.07877 11.6837C8.01707 11.8115 7.98622 11.9592 7.98622 12.1267C7.98622 12.2941 8.01707 12.4418 8.07877 12.5696C8.14048 12.6974 8.22422 12.8054 8.33 12.8936C8.43577 12.9817 8.55698 13.05 8.69361 13.0985C8.83024 13.147 8.96907 13.1712 9.11011 13.1712C9.39218 13.1712 9.64781 13.0787 9.877 12.8936C10.1062 12.7084 10.2208 12.4528 10.2208 12.1267C10.2208 11.9592 10.1899 11.8115 10.1282 11.6837C10.0665 11.5559 9.98277 11.4479 9.877 11.3598C9.77122 11.2716 9.65222 11.2033 9.52 11.1548C9.38777 11.1064 9.25114 11.0821 9.11011 11.0821ZM9.29522 3.74378C8.95144 3.74378 8.62088 3.78124 8.30355 3.85617C7.98622 3.93109 7.6777 4.03026 7.378 4.15367C6.19422 4.56083 6.64192 6.22069 7.88523 5.79253C8.08068 5.72522 8.34763 5.63015 8.67377 5.542C8.6914 5.53319 8.71785 5.52657 8.75311 5.52217C8.78837 5.51776 8.81481 5.51115 8.83244 5.50233C8.98229 5.47589 9.12774 5.46267 9.26877 5.46267C9.57729 5.46267 9.82631 5.5398 10.0158 5.69406C10.2053 5.84831 10.3001 6.06207 10.3001 6.33533C10.3001 6.5557 10.2472 6.75183 10.1414 6.92372C10.0357 7.09561 9.90564 7.25869 9.75138 7.41294C9.59713 7.5672 9.42964 7.72367 9.24894 7.88233C9.06824 8.041 8.90076 8.21289 8.7465 8.398C8.59224 8.58311 8.46222 8.78806 8.35644 9.01283C8.25066 9.23761 8.19777 9.49985 8.19777 9.79956C8.19777 9.92296 8.20439 10.0398 8.21761 10.1499C8.23083 10.2601 8.25066 10.3769 8.27711 10.5003C8.97406 10.6469 9.56025 10.6469 10.0357 10.5003C10.1464 10.4662 10.1464 10.2855 10.0357 9.95822C10.0533 9.67615 10.1503 9.45357 10.3266 9.2905C10.5028 9.12743 10.688 8.96215 10.8819 8.79467C11.0494 8.65363 11.2124 8.50378 11.3711 8.34511C11.5298 8.18644 11.673 8.01015 11.8008 7.81622C11.9286 7.6223 12.0322 7.40633 12.1116 7.16833C12.1909 6.93033 12.2306 6.66148 12.2306 6.36178C12.2306 5.91222 12.1512 5.52217 11.9926 5.19161C11.8339 4.86106 11.6179 4.59 11.3447 4.37844C11.0714 4.16689 10.7585 4.00822 10.4059 3.90244C10.0533 3.79667 9.68307 3.74378 9.29522 3.74378Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
+            <div className="embla embla--alt slider-plans">
+              <motion.div className="slider__container embla__container is-draggable"
+               drag="x"
+               dragConstraints={{
+                 left:-90,
+                 right:0
+           
+           
+               }}>
+              
+   
+                <div
+                  className="slider__slides embla__slides"
+                  style={{ transform: "translate3d(0%, 0px, 0px)" }}
+                >
+                  <div className="slider__slide embla__slide is-current-slide is-selected"
+                   onClick={func_Move1}         >
+                    <div className={`plan   ${border===1?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "10%" }} />
+                          <i>Save 18%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>100</strong> Followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$3.63</span>{" "}
+                          <strong className="text-orange">$2.97</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/500-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slider__slide embla__slide is-next-slide is-selected"
+                  onClick={func_Move2}>
+                    <div className={`plan ${border===2?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "23%" }} />
+                          <i>Save 40%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>250</strong> followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$9.07</span>{" "}
+                          <strong className="text-orange">$5.49</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/2500-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move3}>
+                    <div className={`plan ${border===3?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "36%" }} />
+                          <i>Save 56%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>500</strong> followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$18.15</span>{" "}
+                          <strong className="text-orange">$7.99</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/5000-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move4}>
+                    <div className={`plan ${border===4?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "49%" }} />
+                          <i>Save 64%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>1000</strong> Followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$36.30</span>{" "}
+                          <strong className="text-orange">$13.09</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/10000-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slider__slide embla__slide is-selected"
+                  onClick={func_Move5}>
+                    <div className={`plan ${border===5?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "62%" }} />
+                          <i>Save 68%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>2500</strong> Followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$90.75</span>
+                          <strong className="text-orange">$28.99</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/25000-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slider__slide embla__slide"
+                  onClick={func_Move6}>
+                    <div className={`plan ${border===6?"is-active":""}`}>
+                      <div className="plan__inner">
+                        <div className="plan__bar">
+                          <span style={{ width: "75%" }} />
+                          <i>Save 72%</i>
+                        </div>
+                        <div className="plan__title">
+                          <strong>5000</strong> Followers
+                        </div>
+                        <div className="plan__price text-sm">
+                          <span>$181.50</span>
+                          <strong className="text-orange">$49.99</strong>
+                        </div>
+                        <a
+                          className="plan__link"
+                          href="https://app.twicsy.com/order/start/50000-views"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+
+
+                </div>
+              </motion.div>
+              <div className="slider__cta embla__cta">
+                <button className="slider__button slider__button--prev embla__button embla__prev " />
+                <button className="slider__button slider__button--next embla__button embla__next" />
               </div>
             </div>
-            {/* The list is added here */}
-
-              
-            
-            {like?  <Flist2/>:<Flist1/>}
             <div className="plans__actions">
               <div className="flex-row lg-cols-3 lg-align-center md-cols-3 md-align-center sm-cols-3 sm-align-center xs-cols-2 xs-justify-center">
                 <div className="flex-col">
                   <div className="price">
                     <div className="price__top">
                       <strong>
-                        <sup>${followers? followers.discount:2.97}</sup>
+                        <sup>$</sup>{price}
                       </strong>
-                      <strike>${followers? followers.actualPrice : 6.63}</strike>
+                      <strike>${actualPrice}</strike>
                     </div>
                     <div className="price__bottom">
                       <i />
-                      You Saved <span>{((followers? followers.actualPrice : 6.63)-(followers? followers.discount:2.97)).toFixed(2)} </span>
+                      You Saved <span>${(actualPrice-price).toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
                 <div className="flex-col">
-                  <Link
+                <Link
                     className="btn btn--block"
-                   to="/Enterdetailsf"
+                   to="/Enterdetailsv"
                   >
                     <span />
                     <span />
@@ -711,43 +859,7 @@ export default function Hero_followers() {
                       />
                     </svg>
                   </span>
-                  Guaranteed Instant Delivery
-                </li>
-                <li>
-                  <span>
-                    <svg
-                      className="svg-icon svg-icon--people"
-                      width={19}
-                      height={9}
-                      viewBox="0 0 19 9"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.67674 3.79166C10.7221 3.79166 11.5724 2.94115 11.5724 1.89583C11.5724 0.850507 10.7221 0 9.67674 0C8.63142 0 7.78091 0.850507 7.78091 1.89583C7.78091 2.94115 8.63142 3.79166 9.67674 3.79166ZM13.7899 6.84184C13.7899 8.18363 11.8131 8.36865 9.67674 8.36865C7.54037 8.36865 5.56361 8.18375 5.56361 6.84184C5.56361 5.65619 7.36028 4.27802 9.67674 4.27802C11.9931 4.27802 13.7899 5.65619 13.7899 6.84184ZM13.2641 2.51429C13.2641 1.61347 13.9969 0.880716 14.8976 0.880716C15.7985 0.880716 16.5314 1.6135 16.5314 2.51429C16.5314 3.41511 15.7985 4.148 14.8976 4.148C13.9968 4.14787 13.2641 3.41498 13.2641 2.51429ZM18.442 6.77642C18.442 7.93278 16.7385 8.09211 14.8975 8.09211C14.7214 8.09211 14.5485 8.09051 14.3797 8.08676C14.2981 8.08502 14.2248 8.03659 14.1908 7.96234C14.1571 7.88822 14.1686 7.80139 14.2204 7.73864C14.2276 7.72994 14.6827 7.16145 14.5372 6.44367C14.3939 5.73752 13.6574 5.09841 13.65 5.09197C13.5917 5.04194 13.5649 4.96447 13.5799 4.88914C13.5949 4.81382 13.6494 4.75241 13.7223 4.72846C14.1575 4.58557 14.5789 4.56724 14.8974 4.56724C16.8938 4.56711 18.4419 5.75478 18.4419 6.7764L18.442 6.77642ZM4.44115 4.22877C5.34197 4.22877 6.07473 3.49598 6.07473 2.59519C6.07473 1.69437 5.34194 0.961479 4.44115 0.961479C3.54033 0.961479 2.80744 1.69437 2.80744 2.59519C2.80757 3.49587 3.54047 4.22877 4.44115 4.22877ZM5.7875 4.88261C5.76677 4.80688 5.70616 4.74855 5.62976 4.73102C5.28191 4.65048 4.85646 4.60432 4.46258 4.60432C2.45851 4.60432 0.904297 5.79665 0.904297 6.82245C0.904297 7.98337 2.61456 8.14335 4.46258 8.14335L4.62633 8.14402C4.6852 8.14442 4.74514 8.14469 4.80347 8.14469C4.86194 8.14469 4.91894 8.14442 4.97165 8.14335C5.05273 8.14175 5.12564 8.09412 5.16016 8.02094C5.19495 7.94762 5.18491 7.86079 5.13487 7.7971C5.13073 7.79175 4.72346 7.26434 4.80241 6.53747C4.85793 6.02584 5.49009 5.32186 5.72905 5.09375C5.78578 5.03943 5.80826 4.95835 5.78752 4.88262L5.7875 4.88261Z"
-                        fill="#FF553C"
-                      />
-                    </svg>
-                  </span>
-                  Real follows from real people
-                </li>
-                <li>
-                  <span>
-                    <svg
-                      className="svg-icon svg-icon--lock"
-                      width={13}
-                      height={13}
-                      viewBox="0 0 13 13"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13 3.38286V3.67751C13 3.77839 12.9792 3.87815 12.939 3.97029C12.8988 4.06243 12.8401 4.14488 12.7667 4.21228C12.6933 4.27969 12.6068 4.33053 12.5129 4.36151C12.419 4.39249 12.3198 4.4029 12.2217 4.39208H12.2069C12.0341 4.37367 11.8742 4.29042 11.758 4.15842C11.6419 4.02643 11.5777 3.85507 11.578 3.67751V3.38286C11.578 2.87164 11.3794 2.38136 11.0258 2.01987C10.6723 1.65839 10.1928 1.45531 9.69277 1.45531H9.57023C9.07024 1.45531 8.59072 1.65839 8.23717 2.01987C7.88362 2.38136 7.685 2.87164 7.685 3.38286V4.45817C7.21235 4.40722 6.74239 4.3673 6.263 4.34389V3.38011C6.26371 2.48411 6.61205 1.625 7.23158 0.991303C7.85111 0.357607 8.69121 0.001094 9.56754 2.8021e-07H9.69008C10.1247 -0.000180574 10.5551 0.0871864 10.9566 0.25711C11.3582 0.427034 11.7231 0.676185 12.0305 0.990331C12.3378 1.30448 12.5817 1.67746 12.748 2.08798C12.9144 2.4985 13 2.9385 13 3.38286ZM10.1277 6.60739V11.7843C10.1279 11.9609 10.0677 12.132 9.95752 12.268C9.84736 12.404 9.69417 12.4964 9.52445 12.5291L9.07468 12.6159C7.75261 12.8715 6.41004 13.0001 5.06453 13C3.71858 13.0002 2.37556 12.8716 1.05304 12.6159L0.603274 12.5291C0.433549 12.4964 0.280356 12.404 0.170195 12.268C0.0600331 12.132 -0.0001695 11.9609 3.58454e-07 11.7843V6.60739C-0.0001695 6.43079 0.0600331 6.25969 0.170195 6.12367C0.280356 5.98765 0.433549 5.89528 0.603274 5.86253L0.669257 5.85014C3.57368 5.28833 6.55539 5.28833 9.45981 5.85014L9.52579 5.86253C9.69527 5.89556 9.84815 5.98806 9.95804 6.12405C10.0679 6.26004 10.1279 6.43099 10.1277 6.60739ZM6.92014 7.98422L6.55117 7.60697C6.49036 7.54677 6.40931 7.51265 6.32467 7.51163C6.24003 7.5106 6.15821 7.54275 6.09602 7.60146L4.57437 8.97829L3.86741 8.41241C3.80362 8.3613 3.7237 8.33587 3.6428 8.34094C3.5619 8.34602 3.48563 8.38124 3.42842 8.43995L3.0608 8.8172C3.00187 8.87791 2.96748 8.9591 2.96448 9.04459C2.96149 9.13007 2.99011 9.21357 3.04464 9.27844L4.33737 10.8067C4.36845 10.8425 4.40661 10.8712 4.44932 10.8908C4.49202 10.9105 4.53832 10.9206 4.58515 10.9206C4.63197 10.9206 4.67827 10.9105 4.72098 10.8908C4.76369 10.8712 4.80184 10.8425 4.83292 10.8067L6.93091 8.45509C6.98842 8.39066 7.01939 8.30603 7.01738 8.21882C7.01538 8.13162 6.98054 8.04857 6.92014 7.98697V7.98422Z"
-                        fill="#FF553C"
-                      />
-                    </svg>
-                  </span>
-                  No password required
+                  High Quality followers
                 </li>
                 <li>
                   <span>
@@ -784,9 +896,26 @@ export default function Hero_followers() {
                 <li>
                   <span>
                     <svg
+                      className="svg-icon svg-icon--clock"
+                      width={14}
+                      height={16}
+                      viewBox="0 0 14 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 2.24003C5.14349 2.24003 3.36296 2.96487 2.05026 4.25513C0.737595 5.54543 0 7.29537 0 9.12001C0 10.9447 0.73763 12.6947 2.05026 13.9849C3.36306 15.2752 5.14366 16 7 16C8.85634 16 10.637 15.2752 11.9497 13.9849C13.2624 12.6946 14 10.9447 14 9.12001C13.9978 7.29588 13.2596 5.54704 11.9473 4.25753C10.635 2.96765 8.85564 2.24215 6.99996 2.23999L7 2.24003ZM9.98725 12.2643C9.833 12.4369 9.6106 12.5361 9.37677 12.5363C9.17619 12.5379 8.98188 12.4668 8.83143 12.3362L6.46285 10.2722C6.2872 10.1206 6.18636 9.90204 6.18609 9.67222V5.67204V5.67217C6.18609 5.38636 6.34116 5.12225 6.59298 4.97935C6.8448 4.83644 7.15521 4.83644 7.40704 4.97935C7.65887 5.12225 7.81393 5.38636 7.81393 5.67217V9.28012L9.91394 11.1041H9.91407C10.0858 11.245 10.1908 11.4491 10.2047 11.6685C10.2185 11.888 10.1399 12.1034 9.98725 12.2641L9.98725 12.2643ZM4.94053 1.01601L9.44201 1.59993H4.5582C4.26741 1.59993 3.99869 1.44752 3.85329 1.20002C3.70789 0.952517 3.70789 0.647428 3.85329 0.399915C3.99869 0.152403 4.2674 0 4.5582 0H9.44201C9.7328 0 10.0015 0.152413 10.1469 0.399915C10.2923 0.647418 10.2923 0.952507 10.1469 1.20002C10.0015 1.44753 9.7328 1.59993 9.44201 1.59993L4.94053 1.01601Z"
+                        fill="#FF553C"
+                      />
+                    </svg>
+                  </span>
+                  Orders start in 60 seconds
+                </li>
+                <li>
+                  <span>
+                    <svg
                       className="svg-icon svg-icon--message"
-                      width={12}
-                      height={12}
+                                                                  height={12}
                       viewBox="0 0 12 12"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -807,9 +936,6 @@ export default function Hero_followers() {
     </div>
   </div>
 </div>
-{question && <FollowersInfo />}
-
- 
 
     </div>
   )
